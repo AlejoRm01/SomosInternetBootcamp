@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOMOS</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <style>
+
+    @font-face {
+      font-family: 'TitleFont';
+      src: url('/fonts/title.woff2')       format('woff2');
+    }
+    @font-face {
+      font-family: 'SubtitleFont';
+      src: url('/fonts/subtitle.woff2')    format('woff2');
+    }
+    @font-face {
+      font-family: 'TextFont';
+      src: url('/fonts/text.woff2')        format('woff2');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'TextFont', sans-serif;
+      background: url('/images/background.avif') center/cover no-repeat;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .header img {
+      height: 16px;
+      margin-right: auto;
+      margin-right: 20px;
+    }
+    .header nav a {
+      margin-right: 15px;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'SubtitleFont';
+      font-size: 1rem;
+    }
+    .content {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'TitleFont';
+    }
+    h2, h3 {
+      font-family: 'SubtitleFont';
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-family: 'TextFont';
+      line-height: 1.6;
+    }
+    nav a {
+      color: #90caf9;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <%= image_tag "/images/logo.avif", alt: "SOMOS Logo" %>
+    <nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Somos', somos_path %>
+      <%= link_to 'Tech', tech_path %>
+      
+    </nav>
+  </header>
+
+  <main class="content">
+    <%= yield %>
+  </main>
+</body>
+</html>
