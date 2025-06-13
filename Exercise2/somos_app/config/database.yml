@@ -4,7 +4,7 @@ default: &default
   encoding: unicode
   pool:     <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
   username: postgres
-  password: <%= ENV.fetch("DB_PASSWORD") %>
+  password: <%= ENV.fetch('DB_PASSWORD', '') %>
   host:     localhost
 
 development:
@@ -16,6 +16,9 @@ test:
   database: somos_app_test
 
 production:
-  <<: *default
-  # En Heroku se conecta usando DATABASE_URL
-  url:      <%= ENV["DATABASE_URL"] %>
+  primary:
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
+  cable:
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
