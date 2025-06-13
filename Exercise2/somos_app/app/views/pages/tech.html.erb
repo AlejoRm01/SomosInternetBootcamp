@@ -1,2 +1,55 @@
-<h1>Pages#tech</h1>
-<p>Find me in app/views/pages/tech.html.erb</p>
+<h1>Some questions</h1>
+<h2>
+    What is the meaning of convention over configuration?
+</h2>
+<p>
+    If you follow the rules of Rails, Rails knows what to do. 
+    <br>
+    If you create a model called Car, Rails will create a table called cars in the database.
+    <br>
+    If you create a model called Car with a field called color, Rails will create a column called color in the cars table.
+</p>
+<h2>
+    What is RESTful routing?
+</h2>
+<p>
+    At the moment that you create a resource in Rails, it creates  a set of routes that follow the RESTful principles.
+    <br>
+    Rails creates the next routes:
+    <div style="display: flex; justify-content: center;" >
+        <pre style="text-align: left; margin-right: 60px;">
+            <code>
+                GET /cars - index <br>  
+                GET /cars/new - new <br>
+                POST /cars - create <br>
+                GET /cars/:id - show <br> 
+                GET /cars/:id/edit - edit <br>
+                PATCH/PUT /cars/:id - update <br>
+                DELETE /cars/:id - destroy <br>
+            </code>
+        </pre>
+    </div>
+    </code>
+</p>
+<h2>Git Basics</h2>
+<div style="display: flex; justify-content: space-around; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
+  
+  <div style="flex: 1; min-width: 250px; max-width: 300px; background-color: #ffffff0a; padding: 20px; border-radius: 12px;">
+    <h3>New Branch</h3>
+    <p>To create a new branch in a git repository:</p>
+    <pre><code>git checkout -b branch-name</code></pre>
+  </div>
+
+  <div style="flex: 1; min-width: 250px; max-width: 300px; background-color: #ffffff0a; padding: 20px; border-radius: 12px;">
+    <h3>Commit Changes</h3>
+    <p>To commit changes after staging:</p>
+    <pre><code>git add .<br>git commit -m "your message"</code></pre>
+  </div>
+
+  <div style="flex: 1; min-width: 250px; max-width: 300px; background-color: #ffffff0a; padding: 20px; border-radius: 12px;">
+    <h3>View Previous Commits</h3>
+    <p>To see the commit history:</p>
+    <pre><code>git log</code></pre>
+  </div>
+
+</div>
