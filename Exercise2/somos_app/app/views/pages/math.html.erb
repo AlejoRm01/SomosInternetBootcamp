@@ -1,0 +1,46 @@
+<h1>Math</h1>
+<div style="display: flex; justify-content: space-around; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
+  <div style="flex: 1; min-width: 250px; max-width: 300px; background-color: #ffffff0a; padding: 20px; border-radius: 12px;">
+    <h2>Quadratic</h2>
+    <h3>Example</h3>
+    <p>To calculate the roots of a quadratic equation:<br>
+      x = (-b ± √(b² - 4ac)) / 2a
+    </p>
+    <%= form_with url: math_path, method: :post, local: true do %>
+      <%= hidden_field_tag :operation, "quadratic" %>
+      <p>Enter value for a:</p>
+      <%= text_field_tag :a, params[:a] %>
+      <p>Enter value for b:</p>
+      <%= text_field_tag :b, params[:b] %>
+      <p>Enter value for c:</p>
+      <%= text_field_tag :c, params[:c] %>
+      <br><br>
+      <%= submit_tag "Calculate Roots" %>
+    <% end %>
+
+    <% if defined?(@quadratic_result) && @quadratic_result %>
+      <h4>Roots:</h4>
+      <p><%= @quadratic_result %></p>
+    <% end %>
+  </div>
+
+  <div style="flex: 1; min-width: 250px; max-width: 300px; background-color: #ffffff0a; padding: 20px; border-radius: 12px;">
+    <h2>Factorial</h2>
+    <h3>Example</h3>
+    <p>For example, the factorial of 5 is:<br>
+      5! = 5 × 4 × 3 × 2 × 1 = 120
+    </p>
+    <%= form_with url: math_path, method: :post, local: true do %>
+      <%= hidden_field_tag :operation, "factorial" %>
+      <p>Enter a number to calculate its factorial:</p>
+      <%= text_field_tag :n, params[:n] %>
+      <br><br>
+      <%= submit_tag "Calculate Factorial" %>
+    <% end %>
+
+    <% if defined?(@factorial_result) && @factorial_result %>
+      <h4>Result:</h4>
+      <p><%= @factorial_result %></p>
+    <% end %>
+  </div>
+</div>
